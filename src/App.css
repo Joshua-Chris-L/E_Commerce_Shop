@@ -1,38 +1,101 @@
-.App {
-  text-align: center;
+/* Css for Product */
+.rooot {
+  max-width: 100%;
+}
+.media{
+  height: 0;
+  padding-top: 56.25%;
+}
+.cardActions {
+  display: flex;
+  justify-content: flex-end;
+}
+.cardContent {
+  display: flex;
+  justify-content: space-between;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Css for the AppBar Part */
+.appBar {
+  box-shadow: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@media screen and (min-width: 600px) {
+  appBar {
+    width: calc(100% - 0px);
+    margin-left: 0px;
   }
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.title {
+  flex-grow: 1;
+  align-items: center;
   display: flex;
-  flex-direction: column;
+  text-decoration: none;
+}
+.image{
+  margin-right: 10px;
+}
+.menuButton {
+  margin-right: 16px;
+}
+@media screen and (min-width: 600px) {
+  menuButton {
+    display: none;
+  }
+}
+.grow {
+  flex-grow: 1;
+}
+.search {
+  position: relative;
+  border-radius: 8px;
+  background-color: antiquewhite;
+  margin-right: 16px;
+  margin-left: 0px;
+  width: 100%;
+}
+@media screen and (min-width: 600px) {
+  search {
+    display: none;
+  }
+}
+.searchIcon {
+  padding: 0 16px;
+  height: 100%;
+  position: absolute;
+  pointer-events: none;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+.inputRoot {
+  color: inherit;
+}
+.inputInput{
+  padding: 2px 2px 2px 0px;
+  padding-left: calc(1em + 32px);
+  width: 100%;
 }
 
-.App-link {
-  color: #61dafb;
+@media screen and (min-width: 960px) {
+  inputInput {
+    width: 20ch;
+  }
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Products CSS */
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 8px;
+  min-height: 64px;
 }
+.content {
+    flex-grow: 1;
+    padding: 24px;
+    background-color: lightgray;
+  }
+.roooot {
+    flex-grow: 1,
+  }
