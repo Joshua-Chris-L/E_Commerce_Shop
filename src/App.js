@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 // import Products from './components/Products/Products';
 // import Navbar from './components/Navbar/Navbar';
-import {Products, Navbar} from './components';
+import {Products, Navbar, Cart} from './components';
 import {commerce} from './lib/commerce';
 
 function App() {
@@ -14,28 +14,30 @@ function App() {
     setProducts(data);
   }
 
+  // const fetchCart = commerce.cart.retrieve().then((cart) => setCart(cart));
   const fetchCart = async () => {
-    const cart = await commerce.cart.retrieve();
+        const cart = await commerce.cart.retrieve();
+        setCart(cart);
+   }
 
-    setCart(cart);
-  }
+  // const handleAddToCart = async (productId, quantity) => {
+  //   const item = await commerce.cart.add(productId, quantity);
 
-  const handleAddToCart = async (productId, quantity) => {
-    const item = await commerce.cart.add(productId, quantity);
-
-    setCart(item.cart);
-  }
+  //   setCart(item.cart);
+  // }
 
   useEffect(() => {
       fetchProducts();
       fetchCart();
   }, []);
 
- console.log(cart);
+
+  console.log(cart);
   return (
     <div className='App.css'>
-        <Navbar />
-        <Products products={products} onAddToCart={handleAddToCart}/>
+        <Navbar totalItems={cart.total_items} />
+        {/* <Products products={products} onAddToCart={handleAddToCart}/> */}
+        <Cart cart = {cart}/>
     </div>
   );
 }

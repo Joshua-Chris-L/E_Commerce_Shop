@@ -18,12 +18,12 @@
 /* Css for the AppBar Part */
 .appBar {
   box-shadow: none;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  border-bottom: 1px;
 }
 @media screen and (min-width: 600px) {
   appBar {
-    width: calc(100% - 0px);
-    margin-left: 0px;
+    width: 100%;
+    margin-left: 0;
   }
 }
 .title {
@@ -98,4 +98,44 @@
   }
 .roooot {
     flex-grow: 1,
+  }
+
+  /* Cart CSS */
+  .toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 8px;
+    min-height: 64px;
+    margin-top: 20px;
+  }
+  .cart_title {
+    margin-top: 10%;
+    padding-top: 20px;
+  }
+  .emptyButton {
+    min-width: 150px;
+  }
+	@media screen and (max-width: 600px) {
+    emptyButton {
+      margin-bottom: 5px;
+    }
+  }
+  @media screen and (min-width: 601px) {
+      emptyButton {
+        margin-right: 20px;
+      }
+    }
+  .checkoutButton {
+    min-width: 150px;
+    margin-right: 10px;
+  }
+  .link {
+    text-decoration: none;
+  }
+  .cardDetails {
+    display: flex;
+    margin-top: 10%;
+    width: 100%;
+    justify-content: space-between;
   }
