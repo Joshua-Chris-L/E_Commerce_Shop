@@ -1,11 +1,14 @@
 import React from 'react';
 import {Container, Typography, Button, Grid} from '@mui/material';
+import CartItem from './CartItem/CartItem';
+import {Link} from 'react-router-dom';
 
-const Cart = ({cart}) => {
+const Cart = ({cart, handleUpdateCartQty, handleRemoveFromCart, handleEmptyCart }) => {
 
     const EmptyCart = () => (
          <Typography variant="subtitled"> 
                  You have no items in your shopping cart. Start adding items 
+                 <Link to="/" className='link'>Start Adding some</Link> 
          </Typography>
         );
 
@@ -14,9 +17,7 @@ const Cart = ({cart}) => {
             <Grid container spacing={3}>
                 {cart.line_items.map( (item) => (
                         <Grid item xs={12} sm={4} key={item.id}> 
-                            <div>
-                                {item.name}
-                            </div>
+                            <CartItem item={item} onUpdateCartQty={handleUpdateCartQty} onRemoveCartQty={handleRemoveFromCart}/>
                         </Grid>
                 ))}
             </Grid>
@@ -25,10 +26,10 @@ const Cart = ({cart}) => {
                             Subtotal: {cart.subtotal.formatted_with_symbol}
                     </Typography>
                     <div>
-                        <Button className="emptyButton" size="large" type="button" variant="contained" color="secondary">
+                        <Button className="emptyButton" size="large" type="button" variant="contained" color="secondary" onClick={handleEmptyCart}>
                             Empty Cart
                         </Button>
-                        <Button className="checkoutButton" size="large" type="button" variant="contained" color="primary">
+                        <Button component={Link} to="/checkout" className="checkoutButton" size="large" type="button" variant="contained" color="primary">
                             Checkout
                         </Button>
                     </div>
@@ -43,7 +44,7 @@ const Cart = ({cart}) => {
     return (
         <Container>
              <div  className='toolbar'></div>
-             <Typography className='card_title' variant="h5">
+             <Typography className='card_title' variant="h3" gutterBottom>
                  Your Shopping Cart
              </Typography>
              {!cart.line_items.length ? <EmptyCart /> : <FilledCart />}
