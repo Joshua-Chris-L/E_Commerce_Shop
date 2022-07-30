@@ -58,7 +58,7 @@ const AddressForm = ({checkoutToken, next}) => {
                 <form onSubmit={methods.handleSubmit((data) => next({...data, shippingCountry, shippingSubdivision,shippingOption}) )}>
                     <Grid container spacing={3}>
                          <FormInput required name='firstName' label='First name' />
-                         <FormInput required name='firstName' label='First name' />
+                         <FormInput required name='lastName' label='Last name' />
                          <FormInput required name='address1' label='Address' />
                          <FormInput required name='email' label='Email' />
                          <FormInput required name='City' label='City' />
