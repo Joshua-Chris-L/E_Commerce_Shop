@@ -10,9 +10,9 @@ const Navbar = ({totalItems}) => {
     return (
         <>
          <AppBar position="fixed" classes="appBar" color="inherit">
-            <Toolbar>
+            <Toolbar className='toool'>
                 <Typography component={Link} to="/" variant='h6' className='title' color="inherit">
-                    <img  src={logo} alt="commerce.js" height="25px" className='image'/>
+                    <img src={logo} alt="commerce.js" height="25px" className='image'/>
                     Ferbamg.js
                 </Typography>
                 <div  className='grow'/>

@@ -9,8 +9,9 @@ const Product = ({product, onAddToCart}) => {
     return (
              <Card className='rooot'> 
                      <CardMedia
+                            className="setImage"
                             component="img"
-                            height="194"
+                            height= "470"
                             image={product.image.url}
                             alt="Paella dish"
                          />
